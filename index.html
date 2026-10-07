@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tréso'Til — Occasion vérifiée, remise en main propre | Drôme, Ardèche, Gard, Vaucluse</title>
 <meta name="description" content="Tréso'Til : le site d'annonces d'occasion vérifiées entre particuliers. Remise en main propre dans la Drôme, l'Ardèche, le Gard et le Vaucluse.">
-<!-- ⚠️ IMPORTANT : garde ta balise Google ci-dessous (copie-la depuis ton ancien fichier) -->
 <meta name="google-site-verification" content="XXPD8WzTkzUJQ4H2Daaa8Lo_ysxbPx_szRT5M8ehPas">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +30,6 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,249,239,.92);backdro
 .btn{display:inline-block;background:linear-gradient(135deg,var(--or),var(--of));color:#fff;font-weight:600;padding:12px 26px;border-radius:50px;border:none;cursor:pointer;font-size:1rem;box-shadow:0 6px 18px rgba(200,145,42,.35);transition:transform .15s}
 .btn:hover{transform:translateY(-2px);text-decoration:none}
 .btn2{background:transparent;color:var(--of);border:2px solid var(--or);box-shadow:none}
-.burger{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--oc)}
 
 /* ===== Hero ===== */
 .hero{text-align:center;padding:70px 20px 60px;background:radial-gradient(ellipse at 50% -20%,#ffe9bd 0%,var(--fond) 65%)}
@@ -62,8 +60,11 @@ section{padding:64px 0}
 .annonce .corps h3{font-size:1.1rem;margin-bottom:6px}
 .annonce .prix{color:var(--of);font-weight:700;font-size:1.2rem;margin-bottom:4px}
 .annonce .lieu{color:var(--gris);font-size:.85rem;margin-bottom:12px}
+.annonce .desc{color:var(--gris);font-size:.88rem;margin-bottom:12px}
 .verif{display:inline-flex;align-items:center;gap:6px;background:#e7f5ec;color:var(--vert);font-weight:600;font-size:.8rem;padding:4px 12px;border-radius:50px;margin-top:auto;align-self:flex-start}
 .verif::before{content:"✔"}
+.attente{display:inline-flex;align-items:center;gap:6px;background:#fdf3d7;color:var(--oc);font-weight:600;font-size:.8rem;padding:4px 12px;border-radius:50px;margin-top:auto;align-self:flex-start}
+.attente::before{content:"⏳"}
 
 /* ===== Bandeau ===== */
 .bandeau{background:linear-gradient(135deg,var(--of),var(--oc));color:#fff;text-align:center;padding:52px 20px;border-radius:var(--rayon);margin:0 auto;max-width:1100px}
@@ -83,8 +84,10 @@ details p{color:var(--gris);margin-top:10px;font-size:.95rem}
 .champ label{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px}
 .champ input,.champ textarea,.champ select{width:100%;padding:13px 16px;border:1.5px solid #eadfc8;border-radius:12px;font-family:inherit;font-size:1rem;background:#fff}
 .champ input:focus,.champ textarea:focus,.champ select:focus{outline:none;border-color:var(--or)}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .msg-ok{display:none;background:#e7f5ec;color:var(--vert);font-weight:600;padding:14px 18px;border-radius:12px;margin-top:16px;text-align:center}
 .msg-err{display:none;background:#fdeaea;color:#c0392b;font-weight:600;padding:14px 18px;border-radius:12px;margin-top:16px;text-align:center}
+.note-verif{text-align:center;color:var(--gris);font-size:.85rem;margin-top:12px}
 
 /* ===== Footer ===== */
 footer{background:var(--encre);color:#d8cbb8;padding:44px 20px 26px;margin-top:64px}
@@ -98,6 +101,7 @@ footer a:hover{color:var(--or)}
  .nav li{margin-left:14px;font-size:.85rem}
  .nav .btn{display:none}
  .nav ul li:nth-child(3){display:none}
+ .deux{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -159,7 +163,8 @@ footer a:hover{color:var(--or)}
       <h2>Annonces récentes</h2>
       <p>Un aperçu de ce qui se vend près de chez vous.</p>
     </div>
-    <div class="grille">
+    <div class="grille" id="listeAnnonces">
+      <!-- Annonces de démonstration (remplacées/enrichies par celles de Supabase) -->
       <div class="carte annonce">
         <div class="photo">🚲</div>
         <div class="corps">
@@ -193,33 +198,6 @@ footer a:hover{color:var(--or)}
           <h3>Canapé 3 places tissu</h3>
           <div class="prix">120 €</div>
           <div class="lieu">Carpentras · Vaucluse (84)</div>
-          <span class="verif">Annonce vérifiée</span>
-        </div>
-      </div>
-      <div class="carte annonce">
-        <div class="photo">🎸</div>
-        <div class="corps">
-          <h3>Guitare acoustique + housse</h3>
-          <div class="prix">95 €</div>
-          <div class="lieu">Montélimar · Drôme (26)</div>
-          <span class="verif">Annonce vérifiée</span>
-        </div>
-      </div>
-      <div class="carte annonce">
-        <div class="photo">🖥️</div>
-        <div class="corps">
-          <h3>Écran PC 27" 144 Hz</h3>
-          <div class="prix">110 €</div>
-          <div class="lieu">Avignon · Vaucluse (84)</div>
-          <span class="verif">Annonce vérifiée</span>
-        </div>
-      </div>
-      <div class="carte annonce">
-        <div class="photo">🪑</div>
-        <div class="corps">
-          <h3>Chaise en bois et tissu</h3>
-          <div class="prix">25 €</div>
-          <div class="lieu">Orange · Vaucluse (84)</div>
           <span class="verif">Annonce vérifiée</span>
         </div>
       </div>
@@ -300,20 +278,32 @@ footer a:hover{color:var(--or)}
       <h2>Déposer une annonce ou nous écrire</h2>
       <p>Réponse sous 24h. Tous les champs sont obligatoires.</p>
     </div>
-    <form class="formulaire" action="https://api.web3forms.com/submit" method="POST" id="formContact">
-      <!-- ⚠️ CLE WEB3FORMS : remplace la valeur ci-dessous par ta clé -->
+    <form class="formulaire" id="formContact">
+      <!-- Clé Web3Forms (envoi d'e-mail de notification) -->
       <input type="hidden" name="access_key" value="cb57e7dc-92aa-4cb4-915c-bd1b90ca9997">
       <input type="hidden" name="subject" value="Nouvelle annonce Tréso'Til">
       <input type="hidden" name="from_name" value="Site Tréso'Til">
       <input type="checkbox" name="botcheck" style="display:none">
 
-      <div class="champ">
-        <label for="nom">Votre nom / pseudo</label>
-        <input type="text" id="nom" name="Nom" required placeholder="Ex : Sophie D.">
+      <div class="deux">
+        <div class="champ">
+          <label for="nom">Votre nom / pseudo</label>
+          <input type="text" id="nom" name="Nom" required placeholder="Ex : Sophie D.">
+        </div>
+        <div class="champ">
+          <label for="email">Votre e-mail</label>
+          <input type="email" id="email" name="Email" required placeholder="vous@exemple.fr">
+        </div>
       </div>
-      <div class="champ">
-        <label for="email">Votre e-mail</label>
-        <input type="email" id="email" name="Email" required placeholder="vous@exemple.fr">
+      <div class="deux">
+        <div class="champ">
+          <label for="titre">Titre de l'annonce</label>
+          <input type="text" id="titre" name="Titre" required placeholder="Ex : Vélo de ville homme 28 pouces">
+        </div>
+        <div class="champ">
+          <label for="prix">Prix (€)</label>
+          <input type="number" id="prix" name="Prix" min="0" step="1" required placeholder="Ex : 120">
+        </div>
       </div>
       <div class="champ">
         <label for="dep">Département</label>
@@ -326,12 +316,13 @@ footer a:hover{color:var(--or)}
         </select>
       </div>
       <div class="champ">
-        <label for="message">Votre annonce / message</label>
-        <textarea id="message" name="Message" rows="6" required placeholder="Décrivez l'objet, son état, le prix souhaité..."></textarea>
+        <label for="message">Description de l'objet</label>
+        <textarea id="message" name="Message" rows="6" required placeholder="Décrivez l'objet, son état, son histoire..."></textarea>
       </div>
       <button type="submit" class="btn" style="width:100%">Envoyer ✅</button>
-      <div class="msg-ok" id="msgOk">✅ Merci ! Votre message a bien été envoyé. On vous répond sous 24h.</div>
+      <div class="msg-ok" id="msgOk">✅ Merci ! Votre annonce a bien été envoyée. Elle sera en ligne sous 24h après vérification.</div>
       <div class="msg-err" id="msgErr">❌ Oups, l'envoi a échoué. Réessayez ou écrivez-nous directement.</div>
+      <p class="note-verif">🔍 Chaque annonce est vérifiée manuellement avant publication.</p>
     </form>
   </div>
 </section>
@@ -360,20 +351,79 @@ footer a:hover{color:var(--or)}
   <div class="copy">© 2026 Tréso'Til — Occasion vérifiée, remise en main propre.</div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
+/* ========== SUPABASE ========== */
+const SUPABASE_URL = 'https://agrzmjmbkrqmdvlmlko.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_g8Ne1_VrfgP5IjgP_V85JQ_y5TKfnIu';
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+/* --- 1) Charger les annonces publiées depuis Supabase --- */
+async function chargerAnnonces(){
+  const grille = document.getElementById('listeAnnonces');
+  if(!grille) return;
+  try{
+    const { data, error } = await sb
+      .from('annonces')
+      .select('titre,prix,departement,description')
+      .eq('statut','publie')
+      .order('cree_le',{ascending:false})
+      .limit(20);
+    if(error || !data || data.length===0) return;
+    data.forEach(a=>{
+      const div = document.createElement('div');
+      div.className = 'carte annonce';
+      div.innerHTML =
+        '<div class="photo">🏷️</div>' +
+        '<div class="corps">' +
+          '<h3></h3>' +
+          '<div class="prix">' + (a.prix != null ? a.prix + ' €' : 'Prix à discuter') + '</div>' +
+          '<div class="lieu"></div>' +
+          '<span class="verif">Annonce vérifiée</span>' +
+        '</div>';
+      div.querySelector('h3').textContent = a.titre || 'Annonce';
+      div.querySelector('.lieu').textContent = a.departement || '';
+      grille.prepend(div);
+    });
+  }catch(e){ /* silencieux : les annonces démo restent visibles */ }
+}
+chargerAnnonces();
+
+/* --- 2) Formulaire : enregistre dans Supabase + envoie un e-mail via Web3Forms --- */
 document.getElementById('formContact').addEventListener('submit', async function(e){
   e.preventDefault();
   const f = e.target;
   const ok = document.getElementById('msgOk');
   const err = document.getElementById('msgErr');
   ok.style.display='none'; err.style.display='none';
-  const data = new FormData(f);
+
+  const email = f.Email.value.trim();
+  const nom   = f.Nom.value.trim();
+
+  // a) Enregistrement dans Supabase (statut "en_attente" — visible par toi dans Table Editor)
+  let sbErreur = null;
   try{
-    const r = await fetch('https://api.web3forms.com/submit', {method:'POST', body:data});
-    const j = await r.json();
-    if(j.success){ ok.style.display='block'; f.reset(); }
-    else { err.style.display='block'; }
-  }catch(e2){ err.style.display='block'; }
+    const { error } = await sb.from('annonces').insert([{
+      titre:        f.Titre.value.trim(),
+      prix:         parseFloat(f.Prix.value) || null,
+      departement:  f.Departement.value,
+      description:  f.Message.value.trim(),
+      contact_nom:  nom,
+      contact_email:email,
+      statut:       'en_attente'
+    }]);
+    sbErreur = error;
+  }catch(e2){ sbErreur = e2; }
+
+  // b) E-mail de notification (Web3Forms) — on envoie même si Supabase a planté
+  try{
+    const fd = new FormData(f);
+    fd.set('Message', f.Message.value.trim() + '\n\n— ' + nom + ' (' + email + ')');
+    fetch('https://api.web3forms.com/submit', {method:'POST', body:fd});
+  }catch(e3){}
+
+  if(sbErreur){ err.style.display='block'; }
+  else { ok.style.display='block'; f.reset(); }
 });
 </script>
 
