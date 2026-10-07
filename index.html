@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tréso'Til — Occasion vérifiée, en main propre</title>
+<meta name="description" content="Tréso'Til, le marché de l'occasion vérifiée, en main propre uniquement : Drôme, Ardèche, Gard, Vaucluse.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><circle cx='24' cy='24' r='22' fill='%23E8B23A'/><path d='M15 24.5 L21.5 31 L33 18' fill='none' stroke='%230B3D2E' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<style>
+:root{--or:#E8B23A;--of:#C8912A;--oc:#F6D98A;--em:#0F7A5C;--ef:#0B3D2E;--ec:#E3F2EC;--cr:#FAF6EE;--cf:#F1E9D8;--en:#22271F;--gr:#6B7268}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',system-ui,sans-serif;background:var(--cr);color:var(--en);line-height:1.6}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif}
+a{color:var(--em);text-decoration:none}
+a:hover{text-decoration:underline}
+.ct{max-width:1100px;margin:auto;padding:0 20px}
+header{position:sticky;top:0;background:#fff;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.nw{display:flex;align-items:center;gap:16px;padding:14px 20px;flex-wrap:wrap}
+.logo{display:flex;gap:8px;align-items:center;font-size:1.3rem;font-weight:600;color:var(--en);cursor:pointer}
+.logo:hover{text-decoration:none}
+nav{margin-left:auto;display:flex;gap:20px;align-items:center}
+nav a{color:var(--en);font-weight:500;cursor:pointer}
+nav a.on{color:var(--em);font-weight:700;border-bottom:3px solid var(--or)}
+.burger{display:none;border:2px solid var(--cf);background:none;border-radius:10px;font-size:1.2rem;padding:2px 10px;cursor:pointer}
+.btn{display:inline-block;padding:12px 26px;border-radius:999px;font-weight:600;border:0;cursor:pointer;font-family:inherit;font-size:1rem;transition:.2s}
+.btn:hover{transform:translateY(-2px);text-decoration:none}
+.gold{background:var(--or);color:var(--ef);box-shadow:0 6px 16px rgba(232,178,58,.4)}
+.gold:hover{background:var(--of);color:#fff}
+.emr{background:var(--em);color:#fff}
+.emr:hover{background:var(--ef)}
+.pg{display:none}.pg.on{display:block}
+.hero{background:linear-gradient(140deg,var(--ef),var(--em) 60%,#12805F);color:#fff;padding:70px 0 80px}
+.hb{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:8px 18px;border-radius:999px;font-size:.9rem;margin-bottom:20px}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;margin-bottom:14px}
+.hero h1 i{color:var(--oc)}
+.lead{opacity:.92;max-width:540px;margin-bottom:28px;font-size:1.12rem}
+.hs{background:#fff;border-radius:16px;padding:8px;display:flex;gap:8px;max-width:600px;box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.hs input{flex:1;border:0;padding:13px 16px;font-size:1rem;border-radius:12px;background:var(--cr);font-family:inherit;min-width:0;color:var(--en)}
+.trust{display:flex;gap:22px;margin-top:26px;flex-wrap:wrap;font-size:.9rem;list-style:none}
+.trust li::before{content:"●";color:var(--or);margin-right:8px;font-size:.7rem}
+.sec{padding:64px 0}
+.sw{background:#fff}
+.sh{text-align:center;max-width:620px;margin:0 auto 44px}
+.sh b{color:var(--of);text-transform:uppercase;letter-spacing:2px;font-size:.8rem}
+.sh h2{font-size:clamp(1.6rem,3.5vw,2.3rem);margin:8px 0 10px}
+.sh p{color:var(--gr)}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.cat{background:#fff;border-radius:16px;padding:26px 20px;text-align:center;box-shadow:0 8px 20px rgba(34,39,31,.08);border:2px solid transparent;cursor:pointer;transition:.2s}
+.cat:hover{transform:translateY(-5px);border-color:var(--or)}
+.cat span{font-size:2.4rem;display:block;margin-bottom:10px}
+.cat h3{font-family:'Poppins';font-size:1.05rem}
+.cat small{color:var(--gr)}
+.ads{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
+.ad{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 8px 20px rgba(34,39,31,.08)}
+.ai{height:150px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative}
+.bdg{position:absolute;top:10px;left:10px;background:var(--em);color:#fff;font-size:.7rem;font-weight:700;padding:4px 11px;border-radius:999px}
+.ab{padding:15px;display:flex;flex-direction:column;gap:5px}
+.ttl{font-weight:600}
+.prc{font-family:'Playfair Display';font-size:1.4rem;color:var(--em);font-weight:700}
+.loc{color:var(--gr);font-size:.87rem}
+.hand{margin-top:auto;padding-top:9px;font-size:.78rem;color:var(--of);font-weight:600;border-top:1px dashed var(--cf)}
+.fb{background:#fff;border-radius:16px;padding:14px;display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px;box-shadow:0 8px 20px rgba(34,39,31,.08);align-items:center}
+.fb input,.fb select{padding:11px 15px;border:2px solid var(--cf);border-radius:12px;font-family:inherit;font-size:.95rem;flex:1;min-width:160px;background:var(--cr)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;width:100%}
+.chip{border:2px solid var(--cf);background:#fff;border-radius:999px;padding:7px 16px;font-size:.86rem;cursor:pointer;font-family:inherit}
+.chip.on{background:var(--em);color:#fff;border-color:var(--em)}
+.none{display:none;text-align:center;color:var(--gr);grid-column:1/-1;padding:40px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.step{background:var(--cr);border-radius:16px;padding:30px 24px;text-align:center}
+.step b{width:48px;height:48px;border-radius:50%;background:var(--or);color:var(--ef);font-size:1.25rem;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-family:'Playfair Display'}
+.step p{color:var(--gr);font-size:.93rem}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.sc{background:#fff;border-radius:16px;padding:26px;box-shadow:0 8px 20px rgba(34,39,31,.08);border-left:5px solid var(--or)}
+.sc span{font-size:2rem;display:block;margin-bottom:10px}
+.sc h3{font-family:'Poppins';font-size:1.05rem;margin-bottom:6px}
+.sc p{color:var(--gr);font-size:.92rem}
+.band{background:linear-gradient(120deg,var(--or),var(--of));color:var(--ef);border-radius:16px;padding:38px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.band h2{font-size:clamp(1.3rem,3vw,1.9rem)}
+.band p{opacity:.85;margin-top:5px}
+.frm{background:#fff;border-radius:16px;box-shadow:0 8px 20px rgba(34,39,31,.08);padding:34px;max-width:700px;margin:auto}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fld{margin-bottom:18px}
+.fld label{display:block;font-weight:600;margin-bottom:7px;font-size:.93rem}
+.fld input,.fld select,.fld textarea{width:100%;padding:12px 15px;border:2px solid var(--cf);border-radius:12px;font-family:inherit;font-size:.97rem;background:var(--cr)}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:0;border-color:var(--or)}
+.note{background:var(--ec);border-radius:12px;padding:14px 16px;font-size:.88rem;color:var(--ef);margin-bottom:20px}
+.okd{display:none;background:var(--ec);border:2px solid var(--em);border-radius:16px;padding:36px;text-align:center;max-width:620px;margin:auto}
+.okd .big{font-size:3rem;display:block;margin-bottom:10px}
+.seek{background:#fff;border-radius:16px;padding:18px 22px;box-shadow:0 8px 20px rgba(34,39,31,.08);display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+.seek .se{font-size:1.9rem}
+.seek h3{font-family:'Poppins';font-size:1.02rem}
+.seek .meta{color:var(--gr);font-size:.86rem}
+.seek .bud{margin-left:auto;background:var(--ec);color:var(--ef);font-weight:700;padding:7px 16px;border-radius:999px;white-space:nowrap}
+footer{background:var(--ef);color:#D9E8E1;padding:50px 0 24px}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px;margin-bottom:30px}
+footer h4{color:var(--or);margin-bottom:12px}
+footer a{color:#D9E8E1;font-size:.9rem;display:block;margin-bottom:7px;cursor:pointer}
+footer a:hover{color:var(--oc)}
+.fbt{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-size:.83rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.ph{background:linear-gradient(140deg,var(--ef),var(--em));color:#fff;padding:50px 0}
+.ph h1{font-size:clamp(1.7rem,4vw,2.5rem);margin-bottom:8px}
+.ph p{opacity:.9;max-width:560px}
+@media(max-width:860px){nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:16px 24px;gap:12px;box-shadow:0 10px 20px rgba(0,0,0,.1)}nav.op{display:flex}.burger{display:block;margin-left:auto}.nw>.btn{display:none}.ft{grid-template-columns:1fr 1fr}.fg2{grid-template-columns:1fr}.band{padding:28px}.hero{padding:54px 0 64px}}
+@media(max-width:520px){.ft{grid-template-columns:1fr}.hs{flex-direction:column}.frm{padding:24px}}
+</style>
+</head>
+<body>
+<header><div class="ct nw">
+<a class="logo" data-pg="home"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" style="width:36px;height:36px"><circle cx="24" cy="24" r="22" fill="#E8B23A"/><circle cx="24" cy="24" r="22" fill="none" stroke="#C8912A" stroke-width="3"/><circle cx="24" cy="24" r="17" fill="none" stroke="#C8912A" stroke-width="1.5" stroke-dasharray="2 3"/><path d="M15 24.5 L21.5 31 L33 18" fill="none" stroke="#0B3D2E" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tréso<span style="color:var(--of)">'Til</span></span></a>
+<button class="burger" aria-label="Menu">☰</button>
+<nav id="nv">
+<a data-pg="home" class="on">Accueil</a>
+<a data-pg="annonces">Annonces</a>
+<a data-pg="cherche">Cherche grenier</a>
+<a data-pg="securite">Sécurité</a>
+</nav>
+<a class="btn gold" data-pg="deposer">+ Déposer une annonce</a>
+</div></header>
+<div class="pg on" id="p-home">
+<section class="hero"><div class="ct">
+<span class="hb">🪙 100 % gratuit · 100 % vérifié · 100 % local</span>
+<h1>Le trésor d'à côté,<br><i>en main propre.</i></h1>
+<p class="lead">Tréso'Til, c'est le marché de l'occasion entre voisins : chaque annonce est vérifiée, chaque remise se fait en personne. Zéro paiement en ligne, zéro arnaque, zéro frais.</p>
+<form class="hs" id="heroForm"><input id="heroQ" placeholder="Que cherchez-vous ? Un vélo, un canapé…"><button class="btn gold" type="submit">🔍</button></form>
+<ul class="trust"><li>Annonces vérifiées une à une</li><li>4 départements : 26 · 07 · 30 · 84</li><li>Remise en main propre uniquement</li></ul>
+</div></section>
+<section class="sec sw"><div class="ct">
+<div class="sh"><b>Catégories</b><h2>Quel trésor cherchez-vous ?</h2><p>Des vêtements au vélo électrique, il y en a pour tous les greniers.</p></div>
+<div class="cats">
+<div class="cat" data-pg="annonces"><span>👕</span><h3>Vêtements & mode</h3><small>Voir les trésors →</small></div>
+<div class="cat" data-pg="annonces"><span>📱</span><h3>High-tech</h3><small>Voir les trésors →</small></div>
+<div class="cat" data-pg="annonces"><span>🛋️</span><h3>Maison & meubles</h3><small>Voir les trésors →</small></div>
+<div class="cat" data-pg="annonces"><span>🧸</span><h3>Enfants & jouets</h3><small>Voir les trésors →</small></div>
+<div class="cat" data-pg="annonces"><span>⚽</span><h3>Sport & loisirs</h3><small>Voir les trésors →</small></div>
+<div class="cat" data-pg="annonces"><span>📚</span><h3>Livres & culture</h3><small>Voir les trésors →</small></div>
+<div class="cat" data-pg="annonces"><span>🌱</span><h3>Jardin & bricolage</h3><small>Voir les trésors →</small></div>
+<div class="cat" data-pg="annonces"><span>🚲</span><h3>Mobilité</h3><small>Voir les trésors →</small></div>
+</div>
+</div></section>
+<section class="sec"><div class="ct">
+<div class="sh"><b>Fraîchement vérifiées</b><h2>Les dernières pépites</h2><p>Chaque annonce porte le badge ✓ Vérifié avant d'apparaître ici.</p></div>
+<div class="ads">
+<article class="ad"><div class="ai" style="background:#E3F2EC"><span class="bdg">✓ Vérifié</span>🚲</div><div class="ab"><span class="ttl">Vélo VTC homme, état neuf</span><span class="prc">85 €</span><span class="loc">📍 Valence · Drôme</span><span class="hand">🤝 Remise en main propre</span></div></article>
+<article class="ad"><div class="ai" style="background:#F6E9D8"><span class="bdg">✓ Vérifié</span>🛋️</div><div class="ab"><span class="ttl">Canapé 3 places convertible</span><span class="prc">220 €</span><span class="loc">📍 Avignon · Vaucluse</span><span class="hand">🤝 Remise en main propre</span></div></article>
+<article class="ad"><div class="ai" style="background:#E8F0FA"><span class="bdg">✓ Vérifié</span>📱</div><div class="ab"><span class="ttl">iPhone 11 — 128 Go</span><span class="prc">240 €</span><span class="loc">📍 Nîmes · Gard</span><span class="hand">🤝 Remise en main propre</span></div></article>
+<article class="ad"><div class="ai" style="background:#F9E3E3"><span class="bdg">✓ Vérifié</span>👕</div><div class="ab"><span class="ttl">Lot vêtements bébé 6-12 mois</span><span class="prc">18 €</span><span class="loc">📍 Privas · Ardèche</span><span class="hand">🤝 Remise en main propre</span></div></article>
+<article class="ad"><div class="ai" style="background:#EFE8F9"><span class="bdg">✓ Vérifié</span>🪑</div><div class="ab"><span class="ttl">Table basse chêne massif</span><span class="prc">60 €</span><span class="loc">📍 Montélimar · Drôme</span><span class="hand">🤝 Remise en main propre</span></div></article>
+<article class="ad"><div class="ai" style="background:#E3F2EC"><span class="bdg">✓ Vérifié</span>🎮</div><div class="ab"><span class="ttl">PS4 + 2 manettes + 5 jeux</span><span class="prc">160 €</span><span class="loc">📍 Alès · Gard</span><span class="hand">🤝 Remise en main propre</span></div></article>
+</div>
+<p style="text-align:center;margin-top:38px"><a class="btn emr" data-pg="annonces">Voir toutes les annonces →</a></p>
+</div></section>
+<section class="sec sw"><div class="ct">
+<div class="sh"><b>Simple comme bonjour</b><h2>Comment ça marche ?</h2></div>
+<div class="steps">
+<div class="step"><b>1</b><h3>Déposez votre trésor</h3><p>Photo, prix, commune. Notre équipe vérifie votre annonce avant publication.</p></div>
+<div class="step"><b>2</b><h3>Échangez avec des voisins</h3><p>Les acheteurs vous écrivent directement. Lieu et heure de la remise, en lieu public.</p></div>
+<div class="step"><b>3</b><h3>Remettez en main propre</h3><p>L'acheteur examine l'objet et paie en espèces sur place. Jamais de paiement en ligne.</p></div>
+</div></div></section>
+<section class="sec"><div class="ct"><div class="band">
+<div><h2>🔍 Vous cherchez un objet introuvable ?</h2><p>Décrivez-le dans le « Cherche grenier » : les voisins vous préviennent.</p></div>
+<a class="btn emr" data-pg="cherche">Poster ma recherche</a>
+</div></div></section>
+<section class="sec sw"><div class="ct">
+<div class="sh"><b>Rassurant par nature</b><h2>Pourquoi c'est sûr ?</h2></div>
+<div class="sgrid">
+<div class="sc"><span>✅</span><h3>Annonces vérifiées</h3><p>Identité contrôlée et photos examinées avant chaque publication.</p></div>
+<div class="sc"><span>🤝</span><h3>Main propre = zéro arnaque</h3><p>L'acheteur voit l'objet avant de payer. Pas de faux paiements, pas de colis perdus.</p></div>
+<div class="sc"><span>📍</span><h3>Zone limitée, vrais voisins</h3><p>Uniquement la Drôme, l'Ardèche, le Gard et le Vaucluse.</p></div>
+<div class="sc"><span>🆓</span><h3>Gratuit, sans commission</h3><p>Le prix affiché est le prix payé. Ni frais, ni pourcentage, ni paiement sur le site.</p></div>
+</div></div></section>
+</div>
+<div class="pg" id="p-annonces">
+<section class="ph"><div class="ct"><h1>Les trésors du moment</h1><p>Toutes ces annonces ont été vérifiées par notre équipe. Trouvez, contactez, remettez en main propre.</p></div></section>
+<section class="sec"><div class="ct">
+<div class="fb">
+<input id="adQ" placeholder="🔍 Rechercher (vélo, canapé, iPhone…)">
+<select id="adD"><option value="all">Tous les départements</option><option value="drome">Drôme (26)</option><option value="ardeche">Ardèche (07)</option><option value="gard">Gard (30)</option><option value="vaucluse">Vaucluse (84)</option></select>
+<div class="chips">
+<button class="chip on" data-c="all">Tout</button><button class="chip" data-c="vetements">👕 Vêtements</button><button class="chip" data-c="hightech">📱 High-tech</button><button class="chip" data-c="maison">🛋️ Maison</button><button class="chip" data-c="enfants">🧸 Enfants</button><button class="chip" data-c="sport">⚽ Sport</button><button class="chip" data-c="culture">📚 Culture</button>
+</div></div>
+<div class="ads">
+<article class="ad" data-c="sport" data-d="drome"><div class="ai" style="background:#E3F2EC"><span class="bdg">✓ Vérifié</span>🚲</div><div class="ab"><span class="ttl">Vélo VTC homme, état neuf</span><span class="prc">85 €</span><span class="loc">📍 Valence · Drôme</span><span class="hand">🤝 Remise en main propre</span></div></article>
+<article class="ad" data-c="maison" data-d="vaucluse"><div class="ai" style="background:#F6E9D8"><span class="bdg">✓ Vérifié</span>🛋️</div><div class="ab"><span class="ttl">Canapé 3 places convertible</span><span class="prc">220 €</span><span class="loc">📍 Avignon · Vaucluse</span><span class="hand">🤝 Remise en main propre</span></div></article>
+<article class="ad" data-c="hightech" data-d="gard"><div class="ai" style="background:#E8F0FA"><span class="bdg">✓ Vérifié</span>📱</div><div class="ab"><span class="ttl">iPhone 11 — 128 Go</span><span class="prc">240 €</span><span class="loc">📍 Nîmes · Gard</span><span class="hand">🤝 Remise en main propre</span></div></article>
+<article class="ad" data-c="maison" data-d="ardeche"><div class="ai" style="background:#F1E9D8"><span class="bdg">✓ Vérifié</span>🧺</div><div class="ab"><span class="ttl">Machine à laver 8 kg</span><span class="prc">150 €</span><span class="loc">📍 Privas · Ardèche</span><span class="hand">🤝 Remise en main propre</span></div></article>
+<article class="ad" data-c="maison" data-d="drome"><div class="ai" style="background:#EFE8F9"><span class="bdg">✓ Vérifié</span>🪑</div><div class="ab"><span class="ttl">Table basse chêne massif</span><span class="prc">60 €</span><span class="loc">📍 Montélimar · Drôme</span><span class="hand">🤝 Remise en main propre</span></div></article>
+<article class="ad" data-c="culture" data-d="vaucluse"><div class="ai" style="background:#F9F3E0"><span class="bdg">✓ Vérifié</span>📚</div><div class="ab"><span class="ttl">Lot 20 livres jeunesse</span><span class="prc">15 €</span><span class="loc">📍 Orange · Vaucluse</span><span class="hand">🤝 Remise en main propre</span></div></article>
+<article class="ad" data-c="sport" data-d="gard"><div class="ai" style="background:#E8F0FA"><span class="bdg">✓ Vérifié</span>🛴</div><div class="ab"><span class="ttl">Trottinette électrique 25 km/h</span><span class="prc">180 €</span><span class="loc">📍 Alès · Gard</span><span class="hand">🤝 Remise en main propre</span></div></article>
+<article class="ad" data-c="maison" data-d="ardeche"><div class="ai" style="background:#F6E9D8"><span class="bdg">✓ Vérifié</span>🪑</div><div class="ab"><span class="ttl">Fauteuil rotin vintage</span><span class="prc">45 €</span><span class="loc">📍 Aubenas · Ardèche</span><span class="hand">🤝 Remise en main propre</span></div></article>
+<article class="ad" data-c="hightech" data-d="drome"><div class="ai" style="background:#E3F2EC"><span class="bdg">✓ Vérifié</span>🎮</div><div class="ab"><span class="ttl">PS4 + 2 manettes + 5 jeux</span><span class="prc">160 €</span><span class="loc">📍 Valence · Drôme</span><span class="hand">🤝 Remise en main propre</span></div></article>
+<article class="ad" data-c="enfants" data-d="gard"><div class="ai" style="background:#F9E3E3"><span class="bdg">✓ Vérifié</span>🧸</div><div class="ab"><span class="ttl">Poussette canne + cosy</span><span class="prc">30 €</span><span class="loc">📍 Bagnols-sur-Cèze · Gard</span><span class="hand">🤝 Remise en main propre</span></div></article>
+<article class="ad" data-c="culture" data-d="vaucluse"><div class="ai" style="background:#EFE8F9"><span class="bdg">✓ Vérifié</span>🎸</div><div class="ab"><span class="ttl">Guitare acoustique + housse</span><span class="prc">90 €</span><span class="loc">📍 Villeneuve-lès-Avignon · Vaucluse</span><span class="hand">🤝 Remise en main propre</span></div></article>
+<article class="ad" data-c="vetements" data-d="drome"><div class="ai" style="background:#F9E3E3"><span class="bdg">✓ Vérifié</span>👕</div><div class="ab"><span class="ttl">Lot vêtements bébé 6-12 mois</span><span class="prc">18 €</span><span class="loc">📍 Romans-sur-Isère · Drôme</span><span class="hand">🤝 Remise en main propre</span></div></article>
+<p class="none" id="none">😅 Aucun trésor ne correspond… Essayez un autre mot ou département !</p>
+</div>
+<div class="band" style="margin-top:44px"><div><h2>Vous avez un objet qui dort ?</h2><p>Déposez-le gratuitement, il sera vérifié sous 24 h.</p></div><a class="btn emr" data-pg="deposer">+ Déposer une annonce</a></div>
+</div></section>
+</div>
+<div class="pg" id="p-deposer">
+<section class="ph"><div class="ct"><h1>Déposer une annonce</h1><p>Gratuit, simple, et visible sous 24 h après vérification.</p></div></section>
+<section class="sec"><div class="ct">
+<form class="frm demo">
+<div class="note">🛡️ <b>Rappel sécurité :</b> votre annonce sera vérifiée (identité + photos) avant publication. La remise se fait <b>en main propre uniquement</b>, en lieu public.</div>
+<div class="fld"><label>Titre de l'annonce *</label><input required placeholder="Ex : Vélo VTC homme, état neuf"></div>
+<div class="fg2">
+<div class="fld"><label>Catégorie *</label><select required><option value="">Choisir…</option><option>Vêtements & mode</option><option>High-tech</option><option>Maison & meubles</option><option>Enfants & jouets</option><option>Sport & loisirs</option><option>Livres & culture</option><option>Jardin & bricolage</option><option>Mobilité</option></select></div>
+<div class="fld"><label>Prix (€) *</label><input type="number" min="0" required placeholder="Ex : 45"></div>
+</div>
+<div class="fg2">
+<div class="fld"><label>Département *</label><select required><option value="">Choisir…</option><option>Drôme (26)</option><option>Ardèche (07)</option><option>Gard (30)</option><option>Vaucluse (84)</option></select></div>
+<div class="fld"><label>Commune *</label><input required placeholder="Ex : Valence"></div>
+</div>
+<div class="fld"><label>Description *</label><textarea rows="4" required placeholder="État, marque, dimensions, raison de la vente…"></textarea></div>
+<div class="fg2">
+<div class="fld"><label>Votre prénom *</label><input required placeholder="Ex : Karim"></div>
+<div class="fld"><label>Téléphone *</label><input type="tel" required placeholder="06 12 34 56 78"></div>
+</div>
+<button class="btn gold" style="width:100%" type="submit">🪙 Publier mon trésor</button>
+<p style="text-align:center;color:var(--gr);font-size:.85rem;margin-top:12px">En publiant, vous acceptez que Tréso'Til vérifie votre annonce avant diffusion.</p>
+</form>
+<div class="okd"><span class="big">🎉</span><h2 style="margin-bottom:8px">Annonce envoyée en vérification !</h2><p style="color:var(--gr)">(Démo) — Une fois le site connecté à un vrai formulaire, elle apparaîtra ici sous 24 h avec son badge ✓ Vérifié.</p></div>
+</div></section>
+</div>
+<div class="pg" id="p-cherche">
+<section class="ph"><div class="ct"><h1>Cherche grenier</h1><p>Vous cherchez un objet précis ? Décrivez-le : les voisins qui l'ont dans leur grenier vous contactent.</p></div></section>
+<section class="sec"><div class="ct">
+<div class="sh" style="margin-bottom:30px"><h2>Les recherches du moment</h2><p>Vous avez ça chez vous ? Répondez à une recherche !</p></div>
+<div class="seek"><span class="se">🚲</span><div><h3>Vélo enfant 24 pouces</h3><span class="meta">📍 Bourg-lès-Valence · Drôme · posté cette semaine</span></div><span class="bud">Jusqu'à 60 €</span></div>
+<div class="seek"><span class="se">🔥</span><div><h3>Barbecue charbon + housse</h3><span class="meta">📍 Avignon · Vaucluse · posté cette semaine</span></div><span class="bud">Jusqu'à 40 €</span></div>
+<div class="seek"><span class="se">📦</span><div><h3>Cartons déménagement XL</h3><span class="meta">📍 Nîmes · Gard · posté cette semaine</span></div><span class="bud">Jusqu'à 15 €</span></div>
+<div class="seek"><span class="se">🎹</span><div><h3>Clavier piano débutant 61 touches</h3><span class="meta">📍 Annonay · Ardèche · posté cette semaine</span></div><span class="bud">Jusqu'à 80 €</span></div>
+<div class="seek"><span class="se">🪑</span><div><h3>Chaise haute bébé pliable</h3><span class="meta">📍 Montélimar · Drôme · posté cette semaine</span></div><span class="bud">Jusqu'à 35 €</span></div>
+<div style="margin-top:44px">
+<form class="frm demo">
+<h2 style="text-align:center;margin-bottom:18px">🔍 Poster ma recherche</h2>
+<div class="note">💡 C'est gratuit. Votre recherche reste visible 30 jours.</div>
+<div class="fld"><label>Objet recherché *</label><input required placeholder="Ex : Vélo enfant 24 pouces"></div>
+<div class="fg2">
+<div class="fld"><label>Département *</label><select required><option value="">Choisir…</option><option>Drôme (26)</option><option>Ardèche (07)</option><option>Gard (30)</option><option>Vaucluse (84)</option></select></div>
+<div class="fld"><label>Budget max (€)</label><input type="number" min="0" placeholder="Ex : 50"></div>
+</div>
+<div class="fld"><label>Détails</label><textarea rows="3" placeholder="Marque, état souhaité, couleur…"></textarea></div>
+<div class="fld"><label>Votre e-mail *</label><input type="email" required placeholder="vous@exemple.fr"></div>
+<button class="btn gold" style="width:100%" type="submit">📣 Publier ma recherche</button>
+</form>
+<div class="okd"><span class="big">📬</span><h2 style="margin-bottom:8px">Recherche publiée !</h2><p style="color:var(--gr)">(Démo) — Les voisins pourront vous répondre dès que le site sera connecté.</p></div>
+</div></div></section>
+</div>
+<div class="pg" id="p-securite">
+<section class="ph"><div class="ct"><h1>La sécurité avant tout</h1><p>Sur Tréso'Til, on a supprimé les deux pires choses des sites d'occasion : les paiements en ligne et les envois postaux.</p></div></section>
+<section class="sec sw"><div class="ct">
+<div class="sh"><b>Le processus</b><h2>Comment on vérifie chaque annonce</h2></div>
+<div class="steps">
+<div class="step"><b>🪪</b><h3>1. Identité contrôlée</h3><p>Chaque vendeur fournit une pièce d'identité valide avant sa première annonce.</p></div>
+<div class="step"><b>📸</b><h3>2. Photos examinées</h3><p>Notre équipe compare les photos à la description : état, cohérence, contrefaçons.</p></div>
+<div class="step"><b>✓</b><h3>3. Badge Vérifié</h3><p>Seules les annonces validées sont publiées, avec le badge ✓ Vérifié.</p></div>
+</div></div></section>
+<section class="sec"><div class="ct">
+<div class="sh"><b>Bons réflexes</b><h2>Conseils pour la remise en main propre</h2></div>
+<div class="sgrid">
+<div class="sc"><span>🏪</span><h3>Lieu public et fréquenté</h3><p>Devant une mairie, un supermarché, une gare… Évitez les parkings vides.</p></div>
+<div class="sc"><span>🌞</span><h3>De jour, jamais de nuit</h3><p>Choisissez un créneau en journée. Si possible, amenez quelqu'un avec vous.</p></div>
+<div class="sc"><span>🔍</span><h3>Vérifiez avant de payer</h3><p>Testez l'objet, essayez les vêtements, allumez l'appareil. Vous ne payez que si ça convient.</p></div>
+<div class="sc"><span>💶</span><h3>Espèces ou virement instantané</h3><p>Comptez les billets sur place. Jamais de chèque, jamais de « paiement en ligne ».</p></div>
+<div class="sc"><span>⚠️</span><h3>Signalez tout doute</h3><p>Prix trop beau, vendeur pressé, demande d'acompte ? Signalez, nous retirons l'annonce.</p></div>
+<div class="sc"><span>📱</span><h3>Restez sur le site</h3><p>Ne payez jamais « par SMS » ou « par lien ». Sur Tréso'Til, l'argent ne circule jamais en ligne.</p></div>
+</div></div></section>
+<section class="sec sw"><div class="ct" style="max-width:740px">
+<div class="sh"><b>FAQ</b><h2>Questions fréquentes</h2></div>
+<div class="sgrid" style="grid-template-columns:1fr">
+<div class="sc" style="border-left-color:var(--em)"><h3>C'est vraiment gratuit ?</h3><p>Oui, totalement. Pas de commission, pas de frais d'annonce, pas de mise en avant payante.</p></div>
+<div class="sc" style="border-left-color:var(--em)"><h3>Pourquoi l'identité est-elle demandée ?</h3><p>Pour que chaque vendeur soit une vraie personne identifiable — c'est ce qui rend les arnaques presque impossibles.</p></div>
+<div class="sc" style="border-left-color:var(--em)"><h3>Et si l'acheteur ne vient pas ?</h3><p>Ne retenez rien pour personne : le premier qui vient en main propre repart avec l'objet.</p></div>
+<div class="sc" style="border-left-color:var(--em)"><h3>Combien de temps pour la vérification ?</h3><p>Généralement moins de 24 h ouvrées. Vous êtes prévenu dès que votre trésor est en ligne.</p></div>
+<div class="sc" style="border-left-color:var(--em)"><h3>Puis-je vendre hors des 4 départements ?</h3><p>Non, et c'est voulu : Drôme, Ardèche, Gard et Vaucluse uniquement. La proximité rend la remise facile.</p></div>
+</div></div></section>
+</div>
+<footer><div class="ct">
+<div class="ft">
+<div><div style="display:flex;gap:10px;align-items:center;font-size:1.25rem;color:#fff;font-weight:600;margin-bottom:10px"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" style="width:34px;height:34px"><circle cx="24" cy="24" r="22" fill="#E8B23A"/><circle cx="24" cy="24" r="22" fill="none" stroke="#C8912A" stroke-width="3"/><circle cx="24" cy="24" r="17" fill="none" stroke="#C8912A" stroke-width="1.5" stroke-dasharray="2 3"/><path d="M15 24.5 L21.5 31 L33 18" fill="none" stroke="#0B3D2E" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tréso'Til</span></div>
+<p style="font-size:.9rem;max-width:280px">Le marché de l'occasion vérifiée, en main propre, entre voisins de la Drôme, l'Ardèche, le Gard et le Vaucluse.</p></div>
+<div><h4>Le site</h4><a data-pg="annonces">Voir les annonces</a><a data-pg="deposer">Déposer une annonce</a><a data-pg="cherche">Cherche grenier</a></div>
+<div><h4>Confiance</h4><a data-pg="securite">Comment on vérifie</a><a data-pg="securite">Conseils de remise</a><a data-pg="securite">Questions fréquentes</a></div>
+<div><h4>La zone</h4><a data-pg="annonces">Drôme (26)</a><a data-pg="annonces">Ardèche (07)</a><a data-pg="annonces">Gard (30)</a><a data-pg="annonces">Vaucluse (84)</a></div>
+</div>
+<div class="fbt"><span>© <span class="yr"></span> Tréso'Til — Occasion vérifiée, remise en main propre.</span><span>Aucun paiement en ligne. Jamais.</span></div>
+</div></footer>
+<script>
+const P=document.querySelectorAll('.pg'),N=document.querySelectorAll('nav a');
+function go(n,h){P.forEach(p=>p.classList.toggle('on',p.id==='p-'+n));N.forEach(a=>a.classList.toggle('on',a.dataset.pg===n));document.getElementById('nv').classList.remove('op');scrollTo(0,0);if(h!==false)location.hash=n==='home'?'':n}
+document.querySelectorAll('[data-pg]').forEach(e=>e.addEventListener('click',x=>{x.preventDefault();go(e.dataset.pg)}));
+let h=location.hash.slice(1);if(h&&document.getElementById('p-'+h))go(h,false);
+addEventListener('hashchange',()=>{h=location.hash.slice(1);if(h&&document.getElementById('p-'+h))go(h,false)});
+document.querySelector('.burger').addEventListener('click',()=>document.getElementById('nv').classList.toggle('op'));
+const chips=document.querySelectorAll('.chip'),q=document.getElementById('adQ'),d=document.getElementById('adD'),cards=document.querySelectorAll('.ad');
+let cat='all';
+function filtre(){const s=q.value.toLowerCase().trim(),dd=d.value;let v=0;cards.forEach(c=>{const ok=(cat==='all'||c.dataset.c===cat)&&(dd==='all'||c.dataset.d===dd)&&(!s||c.textContent.toLowerCase().includes(s));c.style.display=ok?'':'none';if(ok)v++});document.getElementById('none').style.display=v?'none':'block'}
+chips.forEach(c=>c.addEventListener('click',()=>{chips.forEach(x=>x.classList.remove('on'));c.classList.add('on');cat=c.dataset.c;filtre()}));
+q.addEventListener('input',filtre);d.addEventListener('change',filtre);
+document.getElementById('heroForm').addEventListener('submit',e=>{e.preventDefault();go('annonces');q.value=document.getElementById('heroQ').value;filtre()});
+document.querySelectorAll('form.demo').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.style.display='none';f.parentElement.querySelector('.okd').style.display='block';scrollTo(0,0)}));
+document.querySelectorAll('.yr').forEach(e=>e.textContent=new Date().getFullYear());
+</script>
+</body>
+</html>
