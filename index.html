@@ -200,26 +200,27 @@ footer a:hover{color:var(--oc)}
 <div class="pg" id="p-deposer">
 <section class="ph"><div class="ct"><h1>Déposer une annonce</h1><p>Gratuit, simple, et visible sous 24 h après vérification.</p></div></section>
 <section class="sec"><div class="ct">
-<form class="frm demo">
+<form class="frm" id="formDepot" data-sujet="🪙 Nouvelle annonce Tréso'Til">
 <div class="note">🛡️ <b>Rappel sécurité :</b> votre annonce sera vérifiée (identité + photos) avant publication. La remise se fait <b>en main propre uniquement</b>, en lieu public.</div>
-<div class="fld"><label>Titre de l'annonce *</label><input required placeholder="Ex : Vélo VTC homme, état neuf"></div>
+<div class="fld"><label>Titre de l'annonce *</label><input name="titre" required placeholder="Ex : Vélo VTC homme, état neuf"></div>
 <div class="fg2">
-<div class="fld"><label>Catégorie *</label><select required><option value="">Choisir…</option><option>Vêtements & mode</option><option>High-tech</option><option>Maison & meubles</option><option>Enfants & jouets</option><option>Sport & loisirs</option><option>Livres & culture</option><option>Jardin & bricolage</option><option>Mobilité</option></select></div>
-<div class="fld"><label>Prix (€) *</label><input type="number" min="0" required placeholder="Ex : 45"></div>
+<div class="fld"><label>Catégorie *</label><select name="categorie" required><option value="">Choisir…</option><option>Vêtements & mode</option><option>High-tech</option><option>Maison & meubles</option><option>Enfants & jouets</option><option>Sport & loisirs</option><option>Livres & culture</option><option>Jardin & bricolage</option><option>Mobilité</option></select></div>
+<div class="fld"><label>Prix (€) *</label><input name="prix" type="number" min="0" required placeholder="Ex : 45"></div>
 </div>
 <div class="fg2">
-<div class="fld"><label>Département *</label><select required><option value="">Choisir…</option><option>Drôme (26)</option><option>Ardèche (07)</option><option>Gard (30)</option><option>Vaucluse (84)</option></select></div>
-<div class="fld"><label>Commune *</label><input required placeholder="Ex : Valence"></div>
+<div class="fld"><label>Département *</label><select name="departement" required><option value="">Choisir…</option><option>Drôme (26)</option><option>Ardèche (07)</option><option>Gard (30)</option><option>Vaucluse (84)</option></select></div>
+<div class="fld"><label>Commune *</label><input name="commune" required placeholder="Ex : Valence"></div>
 </div>
-<div class="fld"><label>Description *</label><textarea rows="4" required placeholder="État, marque, dimensions, raison de la vente…"></textarea></div>
+<div class="fld"><label>Description *</label><textarea name="description" rows="4" required placeholder="État, marque, dimensions, raison de la vente…"></textarea></div>
+<div class="fld"><label>Photos (facultatif)</label><input name="photos" type="file" accept="image/*" multiple><small style="color:var(--gr)">📸 Une annonce avec photos se vend 2× plus vite</small></div>
 <div class="fg2">
-<div class="fld"><label>Votre prénom *</label><input required placeholder="Ex : Karim"></div>
-<div class="fld"><label>Téléphone *</label><input type="tel" required placeholder="06 12 34 56 78"></div>
+<div class="fld"><label>Votre prénom *</label><input name="prenom" required placeholder="Ex : Karim"></div>
+<div class="fld"><label>Téléphone *</label><input name="telephone" type="tel" required placeholder="06 12 34 56 78"></div>
 </div>
-<button class="btn gold" style="width:100%" type="submit">🪙 Publier mon trésor</button>
+<button class="btn gold" style="width:100%" type="submit">🪙 Envoyer mon trésor en vérification</button>
 <p style="text-align:center;color:var(--gr);font-size:.85rem;margin-top:12px">En publiant, vous acceptez que Tréso'Til vérifie votre annonce avant diffusion.</p>
 </form>
-<div class="okd"><span class="big">🎉</span><h2 style="margin-bottom:8px">Annonce envoyée en vérification !</h2><p style="color:var(--gr)">(Démo) — Une fois le site connecté à un vrai formulaire, elle apparaîtra ici sous 24 h avec son badge ✓ Vérifié.</p></div>
+<div class="okd"><span class="big">🎉</span><h2 style="margin-bottom:8px">Annonce envoyée en vérification !</h2><p style="color:var(--gr)">Merci ! Notre équipe la vérifie et vous appelle pour confirmer. Elle sera en ligne sous 24 h avec son badge ✓ Vérifié.</p></div>
 </div></section>
 </div>
 <div class="pg" id="p-cherche">
@@ -232,19 +233,19 @@ footer a:hover{color:var(--oc)}
 <div class="seek"><span class="se">🎹</span><div><h3>Clavier piano débutant 61 touches</h3><span class="meta">📍 Annonay · Ardèche · posté cette semaine</span></div><span class="bud">Jusqu'à 80 €</span></div>
 <div class="seek"><span class="se">🪑</span><div><h3>Chaise haute bébé pliable</h3><span class="meta">📍 Montélimar · Drôme · posté cette semaine</span></div><span class="bud">Jusqu'à 35 €</span></div>
 <div style="margin-top:44px">
-<form class="frm demo">
+<form class="frm" id="formCherche" data-sujet="🔍 Cherche grenier — Tréso'Til">
 <h2 style="text-align:center;margin-bottom:18px">🔍 Poster ma recherche</h2>
 <div class="note">💡 C'est gratuit. Votre recherche reste visible 30 jours.</div>
-<div class="fld"><label>Objet recherché *</label><input required placeholder="Ex : Vélo enfant 24 pouces"></div>
+<div class="fld"><label>Objet recherché *</label><input name="objet" required placeholder="Ex : Vélo enfant 24 pouces"></div>
 <div class="fg2">
-<div class="fld"><label>Département *</label><select required><option value="">Choisir…</option><option>Drôme (26)</option><option>Ardèche (07)</option><option>Gard (30)</option><option>Vaucluse (84)</option></select></div>
-<div class="fld"><label>Budget max (€)</label><input type="number" min="0" placeholder="Ex : 50"></div>
+<div class="fld"><label>Département *</label><select name="departement" required><option value="">Choisir…</option><option>Drôme (26)</option><option>Ardèche (07)</option><option>Gard (30)</option><option>Vaucluse (84)</option></select></div>
+<div class="fld"><label>Budget max (€)</label><input name="budget" type="number" min="0" placeholder="Ex : 50"></div>
 </div>
-<div class="fld"><label>Détails</label><textarea rows="3" placeholder="Marque, état souhaité, couleur…"></textarea></div>
-<div class="fld"><label>Votre e-mail *</label><input type="email" required placeholder="vous@exemple.fr"></div>
+<div class="fld"><label>Détails</label><textarea name="details" rows="3" placeholder="Marque, état souhaité, couleur…"></textarea></div>
+<div class="fld"><label>Votre e-mail *</label><input name="email" type="email" required placeholder="vous@exemple.fr"></div>
 <button class="btn gold" style="width:100%" type="submit">📣 Publier ma recherche</button>
 </form>
-<div class="okd"><span class="big">📬</span><h2 style="margin-bottom:8px">Recherche publiée !</h2><p style="color:var(--gr)">(Démo) — Les voisins pourront vous répondre dès que le site sera connecté.</p></div>
+<div class="okd"><span class="big">📬</span><h2 style="margin-bottom:8px">Recherche publiée !</h2><p style="color:var(--gr)">Elle apparaît dans le « Cherche grenier » dès validation. Les voisins qui ont l'objet vous écriront.</p></div>
 </div></div></section>
 </div>
 <div class="pg" id="p-securite">
@@ -299,7 +300,10 @@ function filtre(){const s=q.value.toLowerCase().trim(),dd=d.value;let v=0;cards.
 chips.forEach(c=>c.addEventListener('click',()=>{chips.forEach(x=>x.classList.remove('on'));c.classList.add('on');cat=c.dataset.c;filtre()}));
 q.addEventListener('input',filtre);d.addEventListener('change',filtre);
 document.getElementById('heroForm').addEventListener('submit',e=>{e.preventDefault();go('annonces');q.value=document.getElementById('heroQ').value;filtre()});
-document.querySelectorAll('form.demo').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.style.display='none';f.parentElement.querySelector('.okd').style.display='block';scrollTo(0,0)}));
+const W3K='cb57e7dc-92aa-4cb4-915c-bd1b90ca9997';
+async function envoi(f){const b=f.querySelector('button');b.disabled=true;b.textContent='⏳ Envoi en cours…';const d=new FormData(f);d.append('access_key',W3K);d.append('subject',f.dataset.sujet);try{const r=await fetch('https://api.web3forms.com/submit',{method:'POST',body:d});if(!r.ok)throw 0;f.style.display='none';f.parentElement.querySelector('.okd').style.display='block';scrollTo(0,0)}catch(x){b.disabled=false;b.textContent='🪙 Réessayer';alert('⚠️ Envoi impossible. Vérifiez la connexion et réessayez.')}}
+document.getElementById('formDepot').addEventListener('submit',e=>{e.preventDefault();envoi(e.target)});
+document.getElementById('formCherche').addEventListener('submit',e=>{e.preventDefault();envoi(e.target)});
 document.querySelectorAll('.yr').forEach(e=>e.textContent=new Date().getFullYear());
 </script>
 </body>
